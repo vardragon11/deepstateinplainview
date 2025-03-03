@@ -64,27 +64,29 @@ def get_eco_data():
     # we only need the the state and unemployement rate values
     df = data[['state','value']]
     leg_name = "Unemployment for the name (%) as of {dateof}"
-
+    map_name = "eco_map"
     if data:
-     create_map(df,leg_name)
+     create_map(df,leg_name,map_name)
     else:
         print("No data was provided..check up stream")
 
 def get_edu_data():
     # Get the economic data
-    data = pd.read_csv("ELC-Totals-by-State.csv")
-
+    data = pd.read_csv("data/ELC-Totals-by-State.csv")
+    # There are States that will not have a loss
+    data = data.fillna(0).rename(columns={"State":"state","Total-L":"value"})
     # we only need the the state and unemployement rate values
-    df = data[['state','Total-L']]
+    df = data[['state','value']]
+    # Map Legend Name
     leg_name = "Worse Case 100% loss of Department of Education funding"
-
+    map_name = "edu_map"
     if df:
-        create_map(df,leg_name)
+        create_map(df,leg_name,map_name)
     else:
         print("No data was provided..check up stream")
 
 # Generate a color-coded map based on economic data
-def create_map(df, leg_name):
+def create_map(df, leg_name,map_name):
     # Get the economic data
     #data = fetch_economic_data()
 
@@ -114,7 +116,7 @@ def create_map(df, leg_name):
         legend_name=leg_name
     ).add_to(m)
     # Save map as HTML
-    m.save('templates/unemp_map.html')
+    m.save(f'templates/{map_name}.html')
     
     return 'Map created successfully'
 
@@ -126,7 +128,8 @@ def create_doed_map(data):
 # Define route to display map
 @app.route('/')
 def home():
-     create_map()
+     get_eco_data()
+     get_edu_data()
      return render_template('map.html')
 
 # Run the app
