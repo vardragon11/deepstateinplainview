@@ -3,7 +3,6 @@ import requests
 import folium
 import plotly 
 import pandas as pd
-#import geopandas as gpd
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -58,38 +57,42 @@ def fetch_economic_data():
 def get_eco_data():
      # Get the economic data
     data = fetch_economic_data()
-
     #what is the date we are looking at 
     dateof = data['date'][0]
+    
     # we only need the the state and unemployement rate values
-    df = data[['state','value']]
-    leg_name = "Unemployment for the name (%) as of {dateof}"
+    df = data[['state','value']].copy()
+    
+    leg_name = "Unemployment Rate by State (%) as of {dateof}"
     map_name = "eco_map"
-    if data:
-     create_map(df,leg_name,map_name)
-    else:
-        print("No data was provided..check up stream")
+    print(len(data))
+    create_map(df,leg_name,map_name)
+    # else:
+    #     print("No data was provided..check up stream")
 
 def get_edu_data():
-    # Get the economic data
-    data = pd.read_csv("data/ELC-Totals-by-State.csv")
+    # Get the education data
+    data = pd.read_csv("data/ELC-data-1.csv")
+    
     # There are States that will not have a loss
-    data = data.fillna(0).rename(columns={"State":"state","Total-L":"value"})
+    data = data.fillna(0).rename(columns={"State":"state","Total-L":"value","value":"notval"})
+    
     # we only need the the state and unemployement rate values
     df = data[['state','value']]
+
+    #df['value']  = df pd.numeric(df['value'])
     # Map Legend Name
-    leg_name = "Worse Case 100% loss of Department of Education funding"
+    leg_name = "Complete Loss of Department of Education (scale up by a factor of 1000 to get exact figures)"
     map_name = "edu_map"
-    if df:
-        create_map(df,leg_name,map_name)
-    else:
-        print("No data was provided..check up stream")
+    print(df)
+    create_map(df,leg_name,map_name)
+    # else:
+    #     print("No data was provided..check up stream")
 
 # Generate a color-coded map based on economic data
 def create_map(df, leg_name,map_name):
-    # Get the economic data
-    #data = fetch_economic_data()
-
+    # Data
+    df = df.dropna(subset=['state','value']).reset_index(drop=True)
     if df is None:
         return "Failed to retrieve data"
 
@@ -98,39 +101,29 @@ def create_map(df, leg_name,map_name):
 
     # Create a Folium map centered on the U.S.
     m = folium.Map(location=[37.8, -96], zoom_start=4)
-#     #what is the date we are looking at 
-#     dateof = data['date'][0]
-#     # we only need the the state and unemployement rate values
-#     df = data[['state','value']]
-
+    
     # Color scale for the map
     folium.Choropleth(
         geo_data=geo_json,
         name='choropleth',
         data=df,
+        attr='&copy;<a href="https://edlawcenter.org/research/trump-2-0-federal-revenue-tool/">ELC<\a>contributors | Source:edlawcenter',
         columns=['state','value'],
         key_on='feature.properties.name',
         fill_color='YlGnBu',
         fill_opacity=0.7,
         line_opacity=0.2,
-        legend_name=leg_name
-    ).add_to(m)
+        legend_name=leg_name,).add_to(m)
     # Save map as HTML
     m.save(f'templates/{map_name}.html')
     
-    return 'Map created successfully'
-
-
-def create_doed_map(data):
-    # Get the economic data
-    data = fetch_economic_data()
-
-# Define route to display map
+    return m
+    
 @app.route('/')
 def home():
-     get_eco_data()
-     get_edu_data()
-     return render_template('map.html')
+    get_eco_data()
+    get_edu_data()
+    return render_template("templates/index.html")
 
 # Run the app
 if __name__ == '__main__':
