@@ -104,9 +104,9 @@ def fetch_economic_data():
 def get_eco_data():
      # Get the economic data
     data = fetch_economic_data()
-
     #what is the date we are looking at 
     dateof = data['date'][0]
+    
     # we only need the the state and unemployement rate values
     df = data[['state','value','date']]
     leg_name = f"Unemployment for the name (%) as of {dateof}"
@@ -124,8 +124,10 @@ def get_edu_data():
     data = data.fillna(0).rename(columns={"State":"state","Total-L":"value1"})
     # we only need the the state and unemployement rate values
     df = data[['state','value']]
+
+    #df['value']  = df pd.numeric(df['value'])
     # Map Legend Name
-    leg_name = "Worse Case 100% loss of Department of Education funding"
+    leg_name = "Complete Loss of Department of Education (scale up by a factor of 1000 to get exact figures)"
     map_name = "edu_map"
     if df is not None:
         results = create_map(df,leg_name,map_name)
@@ -136,9 +138,8 @@ def get_edu_data():
 
 # Generate a color-coded map based on economic data
 def create_map(df, leg_name,map_name):
-    # Get the economic data
-    #data = fetch_economic_data()
-
+    # Data
+    df = df.dropna(subset=['state','value']).reset_index(drop=True)
     if df is None:
         return "Failed to retrieve data"
 
@@ -154,6 +155,7 @@ def create_map(df, leg_name,map_name):
         geo_data=geo_json,
         name='choropleth',
         data=df,
+        attr='&copy;<a href="https://edlawcenter.org/research/trump-2-0-federal-revenue-tool/">ELC<\a>contributors | Source:edlawcenter',
         columns=['state','value'],
         key_on='feature.properties.name',
         fill_color='YlGnBu',
@@ -189,10 +191,10 @@ def home():
     file_age_days = (current_time - modification_time) / 86400  # Convert seconds to days
 
     # Check if file is older than 30 days
-    if file_age_days > 30:
+    if file_age_days > 5:
         eco =  get_eco_data()
 
-    static_eco_data_maps()
+    # static_eco_data_maps()
     edu =  get_edu_data()
     #print(f'edu data {edu} and the econominic data {eco}')
     return render_template('index.html')
