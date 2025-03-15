@@ -1,0 +1,151 @@
+index,state,value,date
+0,Alabama,3.3,2024-10-01
+1,Alabama,3.3,2024-11-01
+2,Alabama,3.3,2024-12-01
+3,Alaska,4.7,2024-10-01
+4,Alaska,4.7,2024-11-01
+5,Alaska,4.7,2024-12-01
+6,Arizona,3.9,2024-10-01
+7,Arizona,3.9,2024-11-01
+8,Arizona,3.8,2024-12-01
+9,Arkansas,3.6,2024-10-01
+10,Arkansas,3.6,2024-11-01
+11,Arkansas,3.6,2024-12-01
+12,California,5.5,2024-10-01
+13,California,5.5,2024-11-01
+14,California,5.5,2024-12-01
+15,Colorado,4.6,2024-10-01
+16,Colorado,4.6,2024-11-01
+17,Colorado,4.6,2024-12-01
+18,Connecticut,3.2,2024-10-01
+19,Connecticut,3.2,2024-11-01
+20,Connecticut,3.2,2024-12-01
+21,Delaware,3.6,2024-10-01
+22,Delaware,3.6,2024-11-01
+23,Delaware,3.6,2024-12-01
+24,Florida,3.5,2024-10-01
+25,Florida,3.5,2024-11-01
+26,Florida,3.4,2024-12-01
+27,Georgia,3.6,2024-10-01
+28,Georgia,3.6,2024-11-01
+29,Georgia,3.6,2024-12-01
+30,Hawaii,3.0,2024-10-01
+31,Hawaii,3.0,2024-11-01
+32,Hawaii,3.0,2024-12-01
+33,Idaho,3.8,2024-10-01
+34,Idaho,3.8,2024-11-01
+35,Idaho,3.8,2024-12-01
+36,Illinois,4.9,2024-10-01
+37,Illinois,4.9,2024-11-01
+38,Illinois,4.9,2024-12-01
+39,Indiana,4.5,2024-10-01
+40,Indiana,4.4,2024-11-01
+41,Indiana,4.4,2024-12-01
+42,Iowa,3.3,2024-10-01
+43,Iowa,3.3,2024-11-01
+44,Iowa,3.3,2024-12-01
+45,Kansas,3.8,2024-10-01
+46,Kansas,3.8,2024-11-01
+47,Kansas,3.8,2024-12-01
+48,Kentucky,5.4,2024-10-01
+49,Kentucky,5.4,2024-11-01
+50,Kentucky,5.3,2024-12-01
+51,Louisiana,4.6,2024-10-01
+52,Louisiana,4.6,2024-11-01
+53,Louisiana,4.6,2024-12-01
+54,Maine,3.4,2024-10-01
+55,Maine,3.4,2024-11-01
+56,Maine,3.4,2024-12-01
+57,Maryland,3.2,2024-10-01
+58,Maryland,3.1,2024-11-01
+59,Maryland,3.1,2024-12-01
+60,Massachusetts,4.2,2024-10-01
+61,Massachusetts,4.1,2024-11-01
+62,Massachusetts,4.1,2024-12-01
+63,Michigan,5.2,2024-10-01
+64,Michigan,5.2,2024-11-01
+65,Michigan,5.2,2024-12-01
+66,Minnesota,3.0,2024-10-01
+67,Minnesota,3.0,2024-11-01
+68,Minnesota,3.0,2024-12-01
+69,Mississippi,3.6,2024-10-01
+70,Mississippi,3.6,2024-11-01
+71,Mississippi,3.6,2024-12-01
+72,Missouri,3.6,2024-10-01
+73,Missouri,3.6,2024-11-01
+74,Missouri,3.6,2024-12-01
+75,Montana,2.9,2024-10-01
+76,Montana,2.9,2024-11-01
+77,Montana,2.9,2024-12-01
+78,Nebraska,2.9,2024-10-01
+79,Nebraska,2.9,2024-11-01
+80,Nebraska,2.9,2024-12-01
+81,Nevada,5.8,2024-10-01
+82,Nevada,5.8,2024-11-01
+83,Nevada,5.8,2024-12-01
+84,New Hampshire,2.8,2024-10-01
+85,New Hampshire,2.8,2024-11-01
+86,New Hampshire,2.8,2024-12-01
+87,New Jersey,4.6,2024-10-01
+88,New Jersey,4.6,2024-11-01
+89,New Jersey,4.6,2024-12-01
+90,New Mexico,4.4,2024-10-01
+91,New Mexico,4.4,2024-11-01
+92,New Mexico,4.3,2024-12-01
+93,New York,4.4,2024-10-01
+94,New York,4.4,2024-11-01
+95,New York,4.4,2024-12-01
+96,North Carolina,3.7,2024-10-01
+97,North Carolina,3.7,2024-11-01
+98,North Carolina,3.7,2024-12-01
+99,North Dakota,2.5,2024-10-01
+100,North Dakota,2.5,2024-11-01
+101,North Dakota,2.5,2024-12-01
+102,Ohio,4.5,2024-10-01
+103,Ohio,4.5,2024-11-01
+104,Ohio,4.5,2024-12-01
+105,Oklahoma,3.3,2024-10-01
+106,Oklahoma,3.3,2024-11-01
+107,Oklahoma,3.3,2024-12-01
+108,Oregon,4.3,2024-10-01
+109,Oregon,4.3,2024-11-01
+110,Oregon,4.3,2024-12-01
+111,Pennsylvania,3.7,2024-10-01
+112,Pennsylvania,3.7,2024-11-01
+113,Pennsylvania,3.7,2024-12-01
+114,Rhode Island,4.5,2024-10-01
+115,Rhode Island,4.5,2024-11-01
+116,Rhode Island,4.5,2024-12-01
+117,South Carolina,4.5,2024-10-01
+118,South Carolina,4.4,2024-11-01
+119,South Carolina,4.4,2024-12-01
+120,South Dakota,1.9,2024-10-01
+121,South Dakota,1.9,2024-11-01
+122,South Dakota,1.9,2024-12-01
+123,Tennessee,3.7,2024-10-01
+124,Tennessee,3.7,2024-11-01
+125,Tennessee,3.7,2024-12-01
+126,Texas,4.2,2024-10-01
+127,Texas,4.2,2024-11-01
+128,Texas,4.2,2024-12-01
+129,Utah,3.3,2024-10-01
+130,Utah,3.3,2024-11-01
+131,Utah,3.3,2024-12-01
+132,Vermont,2.5,2024-10-01
+133,Vermont,2.5,2024-11-01
+134,Vermont,2.5,2024-12-01
+135,Virginia,2.9,2024-10-01
+136,Virginia,2.9,2024-11-01
+137,Virginia,2.9,2024-12-01
+138,Washington,4.4,2024-10-01
+139,Washington,4.4,2024-11-01
+140,Washington,4.4,2024-12-01
+141,West Virginia,4.1,2024-10-01
+142,West Virginia,4.1,2024-11-01
+143,West Virginia,4.1,2024-12-01
+144,Wisconsin,3.1,2024-10-01
+145,Wisconsin,3.1,2024-11-01
+146,Wisconsin,3.1,2024-12-01
+147,Wyoming,3.5,2024-10-01
+148,Wyoming,3.6,2024-11-01
+149,Wyoming,3.5,2024-12-01
